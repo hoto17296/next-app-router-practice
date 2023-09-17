@@ -8,4 +8,14 @@ services:
       - 3000:3000
     init: true
     working_dir: /work
+    environment:
+      REDIS_URL: redis://redis/
     command: sh -c "npm install && npm run dev"
+
+  redis:
+    image: redis:7
+    volumes:
+      - redis:/data
+
+volumes:
+  redis:
