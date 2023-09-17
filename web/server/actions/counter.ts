@@ -1,6 +1,6 @@
 'use server'
 
-import { redisClient } from '@/lib/redis'
+import { redisClient } from '@/server/lib/redis'
 
 const COUNT_KEY = 'count'
 

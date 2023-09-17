@@ -1,4 +1,4 @@
-import { fetchCount } from '@/lib/counter'
+import { fetchCount } from '@/server/actions/counter'
 import Counter from '@/components/Counter'
 
 export default async function Home() {
