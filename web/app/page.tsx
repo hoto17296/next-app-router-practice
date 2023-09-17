@@ -1,20 +1,6 @@
-import { temporaryRedisConnection } from '@/lib/redis'
-import styles from './page.module.css'
-
-const COUNT_KEY = 'count'
-
-async function fetchCount(): Promise<number> {
-  return await temporaryRedisConnection<number>(async (redisClient) =>
-    parseInt((await redisClient.get(COUNT_KEY)) || '0')
-  )
-}
+import { fetchCount } from '@/lib/counter'
+import Counter from '@/components/Counter'
 
 export default async function Home() {
-  const count = await fetchCount()
-  return (
-    <main>
-      <p>Count: {count}</p>
-      <input type="button" value="Increment" />
-    </main>
-  )
+  return <Counter initialCount={await fetchCount()} />
 }
