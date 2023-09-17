@@ -1,0 +1,11 @@
+services:
+
+  web:
+    image: node:20
+    volumes:
+      - ./web:/work
+    ports:
+      - 3000:3000
+    init: true
+    working_dir: /work
+    command: sh -c "npm install && npm run dev"
