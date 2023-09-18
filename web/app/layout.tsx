@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Next Server Action Counter Example',
+  title: 'Next Server Actions Counter Example',
   description: 'Counter app implemented using Next.js Server Actions feature.',
 }
 
